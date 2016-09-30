@@ -4,6 +4,17 @@
 
 Lexer::Lexer() = default;
 
+Lexer::Lexer(const std::string& ms)
+{
+    inputsString = ms; 
+}
+
+void Lexer::Init()
+{
+    SplitInputs(inputsString);
+    //GetTokenVector();
+}
+
 void Lexer::SplitInputs(const std::string& inputs)
 {
     std::string s{};
@@ -11,6 +22,7 @@ void Lexer::SplitInputs(const std::string& inputs)
     {
         if(IsSpace(c))
         {
+            this->stringTokens.push_back(s);
             s = "";
             continue;
         }
@@ -25,7 +37,15 @@ bool Lexer::IsSpace(const char& c)
     return (0 == isspace((int)c)? true : false);
 }
 
-Operator Lexer::GetToken(const char& c)
+void Lexer::GetTokenVector()
+{
+    for(const string& s : inputsString)
+    {
+        GetToken(s);
+    }
+}
+
+Operator Lexer::GetToken(const string& s)
 {
     return Operator::MINUS;
 }

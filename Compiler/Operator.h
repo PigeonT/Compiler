@@ -15,7 +15,13 @@ namespace Compile {
 
 enum class Operator
 {
-ASSIGN, PLUS, MINUS, MULTIPLY,DIVISION
+ASSIGN, 
+PLUS, 
+MINUS, 
+MULTIPLY,
+DIVISIO, 
+NUMBERN,
+ALPHA
 };
 
 

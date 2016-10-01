@@ -6,23 +6,24 @@
 //  Copyright © 2016 pigeon. All rights reserved.
 //
 
-#ifndef _OPERATOR_H__
-#define _OPERATOR_H__
-
-namespace Compile {
-    enum class Operator;
+#ifndef COMPILER_OPERATOR_H__
+#define COMPILER_OPERATOR_H__
+#include <iostream>
+namespace Compiler {
+    enum class Operator : std::int32_t;
 }
 
-enum class Operator
+enum class Compiler::Operator : std::int32_t
 {
-ASSIGN, 
-PLUS, 
-MINUS, 
-MULTIPLY,
-DIVISIO, 
-NUMBERN,
-ALPHA
+    PLUS,
+    MINUS,
+    ASSIGN,
+    MULTIPLY,
+    DIVISION,
+    NUMBER,
+    LEFT_PARENT,
+    RIGHT_PARENT,
+    IDENTIFIER
 };
-
 
 #endif /* Operator_h */

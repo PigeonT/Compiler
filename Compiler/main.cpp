@@ -1,9 +1,9 @@
 #include "Lexer.hpp"
-namespace
+namespace Compiler
 {
-void PrintInputsVector(Lexer& lexer)
+void PrintInputsVector(const Lexer& lexer)
 {
-    for(auto s : inputsString)
+    for(auto s : lexer.inputsString)
     {
         std::cout << s << std::endl;
     }
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
     std::string mStrings;
     std::getline(std::cin, mStrings);
-    Lexer lexer{mStrings};
+    Compiler::Lexer lexer{mStrings};
     lexer.Init();
-}
+    PrintInputsVector(lexer);}
 

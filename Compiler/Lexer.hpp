@@ -1,5 +1,5 @@
-#ifndef _LEXER_H__
-#define _LEXER_H__
+#ifndef COMPILER_LEXER_H_
+#define COMPILER_LEXER_H_
 
 #include "Operator.h"				
 #include <iostream>
@@ -8,27 +8,33 @@
 namespace Compiler
 {
     class Lexer;
-    friend void PrintInputsVector(Lexer&);
+    void PrintInputsVector(const Lexer&);
 }
 
-class Lexer final
+class Compiler::Lexer final
 {
 private:
-    std::vector<Operator> tokens;
+    std::vector<Compiler::Operator> tokens;
     std::vector<std::string> stringTokens;
-    const std::string& inputsString; 
-
-    Operator GetToken(const string&);
-public:
-    explicit Lexer();
-    explicit Lexer(const std::string&); 
+    std::string inputsString;
+    
+    Compiler::Operator GetToken(const std::string&);
+    
+    Operator TokenProducer(const std::string&);
+public:	
+    Lexer() = delete;
+    explicit Lexer(const std::string&);
+    
+    class TokenPruducer;
+    
     void Init();
 
     void SplitInputs(const std::string&);
     
     bool IsSpace(const char&);
     
-    void GetTokenVector(); 
-friend void PrintInputsVector(Lexer&);
+    void GetTokenVector();
+    
+friend void Compiler::PrintInputsVector(const Compiler::Lexer&);
 };
 #endif

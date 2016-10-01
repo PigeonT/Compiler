@@ -254,6 +254,7 @@
 				EE5B33B31D9DCCCF00F1F15E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

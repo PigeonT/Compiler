@@ -1,21 +1,20 @@
 #include "Lexer.hpp"
+#include "Operator.h"
 #include <sstream>
 #include <iostream>
 
-Lexer::Lexer() = default;
-
-Lexer::Lexer(const std::string& ms)
+Compiler::Lexer::Lexer(const std::string& ms)
 {
     inputsString = ms; 
 }
 
-void Lexer::Init()
+void Compiler::Lexer::Init()
 {
     SplitInputs(inputsString);
-    //GetTokenVector();
+    GetTokenVector();
 }
 
-void Lexer::SplitInputs(const std::string& inputs)
+void Compiler::Lexer::SplitInputs(const std::string& inputs)
 {
     std::string s{};
     for(const char& c : inputs)
@@ -32,20 +31,36 @@ void Lexer::SplitInputs(const std::string& inputs)
     }
 }
 
-bool Lexer::IsSpace(const char& c)
+bool Compiler::Lexer::IsSpace(const char& c)
 {
     return (0 == isspace((int)c)? true : false);
 }
 
-void Lexer::GetTokenVector()
+void Compiler::Lexer::GetTokenVector()
 {
-    for(const string& s : inputsString)
+    for(auto& s : stringTokens)
     {
-        GetToken(s);
+        tokens.push_back(GetToken(s));
     }
 }
 
-Operator Lexer::GetToken(const string& s)
+Compiler::Operator Compiler::Lexer::GetToken(const std::string& s)
 {
-    return Operator::MINUS;
+    auto token = TokenProducer(s);
+    return token;
 }
+
+Compiler::Operator Compiler::Lexer::TokenProducer
+(const std::string& s)
+{
+    if("=" == s)
+    {
+        return Operator::PLUS;
+    }
+    else//TODO Operation return statement and Exception
+    {
+        return Operator::MINUS;
+    }
+}
+
+

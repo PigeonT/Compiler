@@ -31,7 +31,7 @@ public:
 
     void SplitInputs(const std::string&);
     
-    bool IsSpace(const char&);
+    bool IsSpace(const char);
     
     void GetTokenVector();
     

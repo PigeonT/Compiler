@@ -12,7 +12,7 @@ namespace Compiler
 {
 void PrintInputsVector(const Lexer& lexer)
 {
-    for(auto s : lexer.inputsString)
+    for(auto s : lexer.stringTokens)
     {
         std::cout << s << std::endl;
     }
@@ -32,8 +32,9 @@ int main(int argc, char *argv[])
     catch(Compiler::InvalidTokenException& iex)
     {
         EXCEPTION_HANDLING(iex);
+        return EXIT_FAILURE;
     }
     
-    return (0);
+    return EXIT_SUCCESS;
 }
 

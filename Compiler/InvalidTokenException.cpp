@@ -9,6 +9,8 @@
 #include "InvalidTokenException.hpp"
 #include "Exception.hpp"
 
+Compiler::InvalidTokenException::InvalidTokenException() = default;
+
 const char*
 Compiler::InvalidTokenException::what() const throw()
 {

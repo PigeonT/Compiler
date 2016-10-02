@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE5B33AE1D9DCCCF00F1F15E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE5B33AD1D9DCCCF00F1F15E /* main.cpp */; };
 		EE5B33B61D9DCD2E00F1F15E /* Lexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE5B33B41D9DCD2E00F1F15E /* Lexer.cpp */; };
+		EE5B33DB1DA1003700F1F15E /* InvalidTokenException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE5B33D91DA1003700F1F15E /* InvalidTokenException.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,9 @@
 		EE5B33B41D9DCD2E00F1F15E /* Lexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lexer.cpp; sourceTree = "<group>"; };
 		EE5B33B51D9DCD2E00F1F15E /* Lexer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Lexer.hpp; sourceTree = "<group>"; };
 		EE5B33B71D9DCE5E00F1F15E /* Operator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Operator.h; sourceTree = "<group>"; };
+		EE5B33D71DA0FF2100F1F15E /* Exception.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Exception.hpp; sourceTree = "<group>"; };
+		EE5B33D91DA1003700F1F15E /* InvalidTokenException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InvalidTokenException.cpp; sourceTree = "<group>"; };
+		EE5B33DA1DA1003700F1F15E /* InvalidTokenException.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InvalidTokenException.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +65,23 @@
 		EE5B33AC1D9DCCCF00F1F15E /* Compiler */ = {
 			isa = PBXGroup;
 			children = (
+				EE5B33D21DA0FE9F00F1F15E /* exceptions */,
 				EE5B33AD1D9DCCCF00F1F15E /* main.cpp */,
 				EE5B33B41D9DCD2E00F1F15E /* Lexer.cpp */,
 				EE5B33B51D9DCD2E00F1F15E /* Lexer.hpp */,
 				EE5B33B71D9DCE5E00F1F15E /* Operator.h */,
 			);
 			path = Compiler;
+			sourceTree = "<group>";
+		};
+		EE5B33D21DA0FE9F00F1F15E /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B33D71DA0FF2100F1F15E /* Exception.hpp */,
+				EE5B33D91DA1003700F1F15E /* InvalidTokenException.cpp */,
+				EE5B33DA1DA1003700F1F15E /* InvalidTokenException.hpp */,
+			);
+			name = exceptions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE5B33B61D9DCD2E00F1F15E /* Lexer.cpp in Sources */,
+				EE5B33DB1DA1003700F1F15E /* InvalidTokenException.cpp in Sources */,
 				EE5B33AE1D9DCCCF00F1F15E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

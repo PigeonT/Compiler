@@ -1,0 +1,11 @@
+create {
+    title {
+        "name", "age";
+    }
+
+    data {
+        "Bob", 12;
+        "Alcie", 23; 
+    }
+
+}
